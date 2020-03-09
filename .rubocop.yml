@@ -1,0 +1,16 @@
+AllCops:
+  Exclude:
+    - db/schema.rb
+    - 'vendor/**/*'
+    - Gemfile
+
+# 日本語のコメントを OK とする
+Style/AsciiComments:
+  Enabled: false
+
+# 一行に 120 文字まで書いても OK とする
+Metrics/LineLength:
+  Max: 120
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
