@@ -12,7 +12,7 @@ Style/AsciiComments:
 
 # 一行に 120 文字まで書いても OK とする
 Metrics/LineLength:
-  Max: 120
+  Max: 200
 
 Style/FrozenStringLiteralComment:
   Enabled: false
