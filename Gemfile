@@ -18,7 +18,7 @@ gem 'html2slim'
 gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
-
+gem 'config'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'sqlite3'
@@ -29,6 +29,7 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'letter_opener_web'
 end
 
 group :test do

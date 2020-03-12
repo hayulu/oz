@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   }
   get 'static_pages/index'
   root 'static_pages#index'
+  
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+
 end
