@@ -1,9 +1,21 @@
-- if user_signed_in?
-  strong
-    = current_user.name
-  = link_to 'ログアウト', destroy_user_session_path, method: :delete
-  | |
-  = link_to 'プロフィール編集', edit_user_registration_path
-- else
-  = link_to '新規登録', new_user_registration_path
-  = link_to 'ログイン', new_user_session_path
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+  .container
+    = link_to 'OZ', root_path, class: 'navbar-brand'
+    button.navbar-toggler[ aria-controls='navbarNavDropdown' aria-expanded='false' aria-label=("Toggle navigation") data-target="#navbarNavDropdown" data-toggle="collapse" type="button" ]
+      span.navbar-toggler-icon
+    .collapse.navbar-collapse#navbarDropdown
+      ul.navbar-nav.mr-auto
+        - unless user_signed_in?
+          li.nav-item.active
+            = link_to '新規登録', new_user_registration_path, class: 'nav-link'
+          li.nav-item
+            = link_to 'ログイン', new_user_session_path, class: 'nav-link'         
+    
+      ul.navbar-nav
+        - if user_signed_in?
+          li.nav-item.dropdown
+            a#navbarDropdown.nav-link.dropdown-toggle[ href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ]      
+              = current_user.name
+            .dropdown-menu[ aria-labelledby="navbarDropdown" ]
+              = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'dropdown-item'
+              = link_to 'プロフィール編集', edit_user_registration_path, class: 'dropdown-item'
