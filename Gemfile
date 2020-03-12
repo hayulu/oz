@@ -36,7 +36,13 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
+  gem 'rails-controller-testing'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'faker'
+  gem 'rails-controller-testing'
 end
+
 
 group :production do
   gem 'pg'
